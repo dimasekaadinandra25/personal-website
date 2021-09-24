@@ -1,0 +1,80 @@
+@import './font.scss';
+@import './color.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $main-font;
+}
+
+.secondary-font{
+    font-family: $secondary-font;
+}
+
+.third-font{
+    font-family: $third-font;
+}
+
+.bg-transparent{
+    background-color: transparent
+}
+
+.dark-text{
+    color: $darkText;
+}
+
+.dark-background{
+    background-color: $darkBackground;
+}
+
+.blob{
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    transition: 0.5s;
+    animation: rotate 6s linear infinite;
+}
+
+.blob:nth-child(2){
+    transition: 0.5s;
+    animation: rotate 4s linear infinite;
+}
+
+.blob:nth-child(3){
+    transition: 0.5s;
+    animation: rotate 10s linear infinite;
+}
+
+@media (min-width: 768px) { 
+    .hover-trigger:hover .hover-target{
+        opacity: 1;
+    }
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+// circle animation
+.circle{
+    position: absolute;
+    width: 1800px;
+    height: 1800px;
+    border-radius: 100%;
+    overflow: hidden;
+    left: -40%;
+    top: -20%;
+
+    .inside-circle{
+        position: absolute;
+        width: 1500px;
+        height: 1500px;
+        border-radius: 100%;
+        overflow: hidden;
+        top: 0%;
+    }
+}

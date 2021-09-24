@@ -1,0 +1,119 @@
+<template>
+    <div class="min-h-screen p-5 md:p-20 overflow-hidden capitalize relative">
+        <div class="circle bg-blue-100 dark:bg-gray-600">
+            <div class="inside-circle bg-blue-50 dark:bg-gray-800">
+                <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_nss1rfwu.json"  background="transparent"  speed="1"  loop  autoplay class="opacity-25 absolute -left-40"></lottie-player>
+            </div>
+        </div>
+        <p class="text-4xl font-bold dark:text-yellow-500 text-center z-20 relative">My Skills</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+           <div v-for="(skill, index) in dataSkill" :key="index">
+                <div class="text-center text-5xl md:text-7xl mt-2 md:mt-12 hover:bg-blue-300 transition duration-300 transform scale-90 hover:scale-95 dark:hover:bg-gray-700 py-2 rounded-md hover:shadow-xl" v-bind:class="skill.text_hover">
+                <fa :icon="[skill.type, skill.icon]" />
+                <p class="dark:text-yellow-300 md:mt-5 px-5 text-black hidden md:block third-font text-xl"><span class="font-bold">{{skill.name}}</span> {{skill.additional_description}}</p>
+                <p class="font-bold text-black text-xl block md:hidden dark:text-yellow-300">{{skill.name}}</p>
+            </div>
+           </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import * as LottiePlayer from "@lottiefiles/lottie-player";
+
+const dataSkill = [
+    {
+        name: 'HTML5',
+        additional_description: 'used for structuring and presenting content on the World Wide Web.',
+        type: 'fab',
+        icon: 'html5',
+        text_hover: 'hover:text-yellow-400'
+    },
+    {
+        name: 'CSS',
+        additional_description: 'used for describing the presentation of a document written in a markup language such as HTML.',
+        type: 'fab',
+        icon: 'css3',
+        text_hover: 'hover:text-blue-500'
+    },
+    {
+        name: 'Sass',
+        additional_description: 'is a preprocessor scripting language that is interpreted or compiled into CSS.',
+        type: 'fab',
+        icon: 'sass',
+        text_hover: 'hover:text-pink-500'
+    },
+    {
+        name: 'Bootstrap',
+        additional_description: 'is CSS framework directed at responsive, mobile-first front-end web development.',
+        type: 'fab',
+        icon: 'bootstrap',
+        text_hover: 'hover:text-purple-600'
+    },
+    {
+        name: 'Tailwindcss',
+        additional_description: 'is fully responsive and beautiful CSS framework and you can create your own design.',
+        type: 'fas',
+        icon: 'wind',
+        text_hover: 'hover:text-blue-400'
+    },
+    {
+        name: 'JavaScript',
+        additional_description: 'is a scripting language that enables you to create dynamically updating, control and animate content.',
+        type: 'fab',
+        icon: 'js',
+        text_hover: 'hover:text-yellow-400'
+    },
+    {
+        name: 'Php',
+        additional_description: 'is a general-purpose scripting language geared towards web development. PHP used to develop static or dynamic website.',
+        type: 'fab',
+        icon: 'php',
+        text_hover: 'hover:text-gray-500'
+    },
+    {
+        name: 'Codeigniter',
+        additional_description: 'is an open-source software rapid development web framework, for use in building dynamic web sites with PHP.',
+        type: 'fas',
+        icon: 'fire',
+        text_hover: 'hover:text-yellow-600'
+    },
+    {
+        name: 'Java',
+        additional_description: 'is a object-oriented programming language that is designed to have as few implementation dependencies as possible.',
+        type: 'fab',
+        icon: 'java',
+        text_hover: 'hover:text-white'
+    },
+    {
+        name: 'Python',
+        additional_description: 'is an interpreted high-level general-purpose programming language. Its design philosophy emphasizes code readability with its use of significant indentation.',
+        type: 'fab',
+        icon: 'python',
+        text_hover: 'hover:text-yellow-400'
+    },
+    {
+        name: 'Vue Js',
+        additional_description: 'is an open-source model–view–viewmodel front end JavaScript framework for building user interfaces and single-page applications.',
+        type: 'fab',
+        icon: 'vuejs',
+        text_hover: 'hover:text-green-600'
+    },
+    {
+        name: 'Figma',
+        additional_description: 'is a vector graphics editor and prototyping tool which is primarily web-based and desktop applications.',
+        type: 'fab',
+        icon: 'figma',
+        text_hover: 'hover:text-pink-500'
+    },
+]
+export default {
+    name: "Skills",
+    setup(){
+        return{
+            LottiePlayer,
+            dataSkill
+        }
+    }
+}
+</script>
