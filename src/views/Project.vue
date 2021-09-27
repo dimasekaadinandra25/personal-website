@@ -5,7 +5,7 @@
         </div>
         <div class="text-center text-4xl font-bold">Project</div>
         <div class="grid grid-cols-1 md:grid-cols-1 gap-4 mt-10">
-            <!-- <div v-for="(project, index) in CompletedProject" :key="index">
+            <div v-for="(project, index) in CompletedProject" :key="index">
                 <div class="flex items-center md:items-end flex-col dark:bg-gray-700 bg-blue-300 opacity-90 p-5 rounded h-full md:flex-row md:bg-transparent md:dark:bg-transparent">
                     <img :src="project.image" alt="image" class="w-full md:w-8/12 md:bg-blue-300 rounded md:dark:bg-gray-600 md:p-1" :class="{'md:order-last' : index % 2 !== 0}">
                     <div class="flex flex-col items-center md:h-auto h-full md:bg-blue-500 md:dark:bg-gray-700 text-white md:px-20 md:py-5 md:mb-5 w-full rounded text-center opacity-95 dark:text-yellow-500" :class="{'md:-mr-40' : index % 2 !== 0, 'md:-ml-40' : index % 2 === 0}">
@@ -14,11 +14,12 @@
                         <div class="mt-3 w-full justify-evenly items-end h-full flex text-center text-black font-bold dark:text-yellow-500">
                             <a :href="project.github" target="_blank" class="px-4 py-2 bg-white dark:bg-gray-800 w-full mx-5 rounded hover:bg-gray-200 dark:hover:bg-gray-900 transition duration-200 transform scale-95 hover:scale-100" v-if="project.github !== ''">Github</a>
                             <a :href="project.link" target="_blank" class="px-4 py-2 bg-white dark:bg-gray-800 w-full mx-5 rounded hover:bg-gray-200 dark:hover:bg-gray-900 transition duration-200 transform scale-95 hover:scale-100" v-if="project.link !== ''">Demo</a>
+                            <p v-else class="px-4 py-2 dark:text-yellow-500 rounded bg-white dark:bg-gray-800">Link Not Available</p>
                         </div>
                     </div>
                 </div>
-            </div> -->
-            <div class="flex items-center md:items-end flex-col dark:bg-gray-700 bg-blue-300 opacity-90 p-5 rounded h-full md:flex-row md:bg-transparent md:dark:bg-transparent">
+            </div>
+            <!-- <div class="flex items-center md:items-end flex-col dark:bg-gray-700 bg-blue-300 opacity-90 p-5 rounded h-full md:flex-row md:bg-transparent md:dark:bg-transparent">
                 <img src="../assets/rainforest.png" alt="image" class="w-full md:w-8/12 md:bg-blue-300 rounded md:dark:bg-gray-600 md:p-1">
                 <div class="flex flex-col items-center md:h-auto h-full md:bg-blue-500 md:dark:bg-gray-700 text-white md:px-20 md:py-5 md:mb-5 w-full rounded text-center opacity-95 dark:text-yellow-500 md:-ml-40" >
                     <p class="py-5 flex items-center h-full text-xl font-extrabold">Rain Forest</p>
@@ -81,7 +82,7 @@
                         <p class="px-4 py-2 dark:text-yellow-500 rounded bg-white dark:bg-gray-800">Link Not Available</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
@@ -110,14 +111,29 @@ const CompletedProject = [
         link: 'https://dimascapella.github.io/UtsmanFoundation/',
         github: 'https://github.com/dimascapella/UtsmanFoundation',
         stack: 'Html, Css, Javascript'
-    }
-    ,
+    },
     {
         name: 'Company Profile Bee Enterprise (Not full content)',
         image: 'src/assets/bee.png',
         link: 'https://dimascapella.github.io/Bee/',
         github: 'https://github.com/dimascapella/Bee',
         stack: 'Html, Css, Javascript'
+    }
+    ,
+    {
+        name: 'Management Stock Toko Bunga Cengkeh',
+        image: 'src/assets/store_1.png',
+        link: '',
+        github: '',
+        stack: 'CodeIgniter 3, MySQL'
+    }
+    ,
+    {
+        name: 'Management Store Warung Nasi Goreng',
+        image: 'src/assets/store_2.png',
+        link: '',
+        github: '',
+        stack: 'CodeIgniter 4, MySQL'
     }
 ]
 
